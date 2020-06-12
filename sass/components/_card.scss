@@ -1,0 +1,157 @@
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+
+    position: relative;
+    height: 50rem;
+
+    &-sides{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.15);
+        transition: all 1s;
+
+    }
+
+
+    &-front{
+        background-color: #fff;
+
+        &-pic{
+            background-blend-mode: screen;
+            -webkit-background-blend-mode: screen;
+            height: 23rem;
+            background-size: cover;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+        
+
+        &-heading{
+            font-size: 2.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            text-align: right;
+            color: #fff;
+            width: 75%;
+            position: absolute;
+            top: 12rem;
+            right: 2rem;
+
+            &-1{
+                padding: 1rem 1.5rem;
+                background-image: linear-gradient(to right bottom, rgba(255,185,0,0.85), rgba(255,119,48,0.85));
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+            }
+            &-2{
+                padding: 1rem 1.5rem;
+                background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.85), rgba($color-primary-dark,0.85));
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+            }
+            &-3{
+                padding: 1rem 1.5rem;
+                background-image: linear-gradient(to right bottom, rgba(#2998ff,0.85), rgba(#5643fa,0.85));
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+            }
+            
+            
+
+        }
+        &-list{
+            padding: 3rem;
+            ul{
+                list-style: none;
+                width: 80%;
+                margin: 0 auto;
+            }
+            li{
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+            }
+            li:not(:last-child) {
+                border-bottom: 1px solid #eee;}
+
+        }
+        &-pic-1{
+            background-image:linear-gradient(to right bottom ,
+            $color-secondary-light,$color-secondary-dark) ,
+            url(../../imgs/nat-5.jpg);}
+        &-pic-2{
+            background-image:linear-gradient(to right bottom ,
+            $color-primary-light,$color-primary-dark) ,
+            url(../../imgs/nat-6.jpg);        
+            }
+        &-pic-3{
+            background-image:linear-gradient(to right bottom ,
+            #2998ff,#5643fa) ,
+            url(../../imgs/nat-7.jpg);           
+
+    }
+    
+
+    }
+    
+    
+
+    &-back{
+        transform: rotateY(180deg);
+
+        &-1{
+            background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+
+        }
+        &-2{
+            background-image:linear-gradient(to right bottom ,
+            $color-primary-light,$color-primary-dark)
+        }
+        &-3{
+            background-image:linear-gradient(to right bottom ,
+            #2998ff,#5643fa)
+        }
+
+        &-content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 90%;
+            text-align: center;
+
+            &-price{
+                color: #fff;
+            margin-bottom: 8rem;
+            }           
+
+
+            p:first-of-type{
+                font-size: 1.4rem;
+                text-transform: uppercase;
+
+            }
+            p:last-of-type{
+                font-size: 6rem;
+                font-weight: 100;
+            }
+        }
+    }
+
+
+    &:hover &-front{
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &-back{
+        transform: rotateY(0deg);
+    }
+}
